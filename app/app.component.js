@@ -9,14 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var site_component_1 = require('./site.component');
+var nav_bar_component_1 = require('./nav-bar.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Nexus';
     }
+    AppComponent.prototype.ngOnInit = function () {
+    };
+    AppComponent.prototype.siteChanged = function (event) {
+        this.currentSite = event.value;
+    };
+    AppComponent.prototype.onSelect = function (site) {
+        this.currentSite = site;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>Welcome to {{title}}</h1>'
+            template: "\n    <nav-bar [sites]=\"sites\" (siteChange)=\"siteChanged($event);\"></nav-bar>\n    <md-content class=\"container\">\n        <site [site]=\"currentSite\"></site>\n    </md-content>\n  ",
+            directives: [site_component_1.SiteComponent, nav_bar_component_1.NavBarComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -5,19 +5,11 @@ import { Site } from './site';
 
 @Component({
   selector: 'site',
-  template: `
-  <div class="fill-space">
-    <iframe class="iframe" *ngIf="site?.id !== 0" [src]="url" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-    <div *ngIf="site?.id === 0">
-        <h1>Dashboard</h1>
-    </div>
-  </div>
-  `,
+  templateUrl: 'app/site.component.html',
   styles: [`
     .iframe {
         width: 100%;
-        height: 100%;
-        margin: 64px 0 0 0;
+        height: calc(100% - 64px);
     }
   `],
   providers: [BROWSER_SANITIZATION_PROVIDERS]

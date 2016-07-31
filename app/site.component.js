@@ -29,8 +29,8 @@ var SiteComponent = (function () {
     SiteComponent = __decorate([
         core_1.Component({
             selector: 'site',
-            template: "\n  <div class=\"fill-space\">\n    <iframe class=\"iframe\" *ngIf=\"site?.id !== 0\" [src]=\"url\" frameborder=\"0\" scrolling=\"no\" allowtransparency=\"true\"></iframe>\n    <div *ngIf=\"site?.id === 0\">\n        <h1>Dashboard</h1>\n    </div>\n  </div>\n  ",
-            styles: ["\n    .iframe {\n        width: 100%;\n        height: 100%;\n        margin: 64px 0 0 0;\n    }\n  "],
+            templateUrl: 'app/site.component.html',
+            styles: ["\n    .iframe {\n        width: 100%;\n        height: calc(100% - 64px);\n    }\n  "],
             providers: [platform_browser_1.BROWSER_SANITIZATION_PROVIDERS]
         }), 
         __metadata('design:paramtypes', [platform_browser_1.DomSanitizationService])

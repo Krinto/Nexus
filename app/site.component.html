@@ -1,0 +1,6 @@
+<div class="fill-space">
+    <iframe class="iframe" *ngIf="site?.id !== 0" [src]="url" frameborder="0" allowtransparency="true"></iframe>
+    <div *ngIf="site?.id === 0">
+        <h1>Dashboard</h1>
+    </div>
+</div>

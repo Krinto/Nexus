@@ -5,6 +5,11 @@ body md-toolbar {
   width: 100%;
 }
 
+md-toolbar {
+  background-image: url('images/titlebar/title.png');
+  color: white;
+}
+
 .secondary {
   color: rgba(0,0,0,0.54);
 }
